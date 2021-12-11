@@ -1,3 +1,39 @@
+function minSteps(s1, s2, index1, index2, hashMap) {
+  // console.log(index1, index2);
+   if(s1.length == index1){
+      return s2.length - index2;
+   }
+   if(s2.length == index2){
+      return s1.length - index1;
+   }
+   let key = index1+"_"+index2;
+   
+   if(hashMap.hasOwnProperty(key)) {
+       return hashMap[key];
+   }
+   
+   if(s1[index1] == s2[index2]) {
+       hashMap[key] = minSteps(s1, s2, index1+1, index2+1, hashMap);
+       return hashMap[key];
+   } else {
+       let insert = minSteps(s1, s2, index1, index2+1, hashMap);
+       let del = minSteps(s1, s2, index1+1, index2, hashMap);
+       let replace = minSteps(s1, s2, index1+1, index2+1, hashMap);
+       let minOps = Math.min(insert, del, replace);
+       hashMap[key] = minOps +1;
+       return hashMap[key];
+   }
+}
+var minDistance = function(word1, word2) {
+   let hashMap = {};
+   
+   let steps= minSteps(word1, word2, 0, 0, hashMap);
+ //  console.log(hashMap);
+   return steps;
+   
+};
+
+//----------------------------------------------------------------------------------------------------------------
 var minDistance = function(word1, word2) {
     
     let matrix = [];
