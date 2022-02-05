@@ -11,29 +11,57 @@
  * @param {number} k
  * @return {number[]}
  */
-function travelsal(node, nodeLevelMap, dis, target, k) {
-    if(!node) return;
-    else {
-        travelsal(node.left, nodeLevelMap, dis + 1, target,k);
-        !nodeLevelMap.hasOwnProperty(node.val) && (nodeLevelMap[node.val] = dis);
-        
-        travelsal(node.right, nodeLevelMap, dis + 1, target,k);
+ function downwardDistanceK(node, k, result) {
+    if(!node || k < 0) {
+       return;
     }
+   // console.log(node.val  + "_" + k)
+    if(k == 0) {
+        result.push(node.val);
+    }
+    k--;
+    downwardDistanceK(node.left, k, result);
+    downwardDistanceK(node.right, k, result)
 }
-var distanceK = function(root, target, k) {
-    let nodeLevelMap = {};
-    travelsal(root, nodeLevelMap, 0, target, k);
-
-    let targetNodeLevel = nodeLevelMap[target];
-    let leveldownward = nodeLevelMap[target] + k;
-    let levelupward = Math.abs(nodeLevelMap[target] - k);
-    let ans = [];
-    console.log(targetNodeLevel + ":" +levelupward )
-    
-    for(let node in nodeLevelMap) {
-        if( node != target && ( nodeLevelMap[node] == leveldownward || nodeLevelMap[node] == levelupward ) ) {
-            ans.push(node);
+function traversal(node, target, k, result) {
+    if(!node) {
+       return -1;
+    }
+   // console.log(node.val + "_" + target)
+    if(node.val == target.val) {
+        downwardDistanceK(node, k, result);
+        return 0;
+    }
+    let leftDist =  traversal(node.left, target, k, result);
+    if(leftDist != -1) {
+       if(k == leftDist+1) {
+          result.push(node.val);
+           return -1;
+        } else {
+            // traversal(node.right, target, k-2, result);
+            downwardDistanceK(node.right, k-leftDist-2, result);
+            return leftDist+1;    
+        }
+        
+    }
+    let rightDist =  traversal(node.right, target, k, result);
+    if(rightDist != -1) {
+       if(k == rightDist+1) {
+          result.push(node.val);
+           return -1;
+        } else {
+            //traversal(node.left, target, k-2, result);
+            downwardDistanceK(node.left, k-rightDist-2, result);
+            return rightDist+1;    
         }
     }
-        return ans;
+    
+    return -1;
+}
+var distanceK = function(root, target, k) {
+    let result = [];
+   traversal(root, target, k, result);
+    return result;
+    
 };
+//https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/
