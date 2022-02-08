@@ -1,0 +1,15 @@
+Data structures used databases like MongoDB, MySQL
+
+Low level design
+OOPS
+Design patterns
+SOLID principles
+
+Leadership principles
+
+Why NoSQL databases were easy to shard in comparision with SQL based databases
+
+Queue & DqQueue implementation in javascript
+
+
+

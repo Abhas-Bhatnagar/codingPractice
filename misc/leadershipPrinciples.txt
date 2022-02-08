@@ -1,0 +1,157 @@
+Have Backbone; Disagree and Commit
+
+Sample questions:
+Q1: Describe a situation where other members of your team didn’t agree with your ideas. What did you do?
+Q2: Tell me about a situation where you had a conflict with someone on your team. What was it about? What did you do? How did they react? What was the outcome?
+
+Eg:-
+Breakby discussion ->
+    Situation : To do poc for our use cases as well as flow for that feature. But conflict arises because it was not intuitive.
+        After evaluating all possible use cases 
+            Me -> Complex UI but catters most of the requiremts.
+            Sahil sir -> Simple and provide less features.
+    Task: Can we do launch some pilot project like in survey form. 
+            Target audience ->  Bunisess analyst (specialized users)
+                                Normal user.
+    Action: Launch that pilot project.
+            Analyzed that data.
+            Came with mixed approach.
+    Result: Premium users were using that complex feature. (visa, STC, Dubai Asset Management)
+            Normal users were using simple flow. (Karvy, Sabb, Bupa Arabia, BMW, Vedanta)
+
+    Quantative Metric:: Out of 10 big clients 20%-30% were using that
+    Fruitfull byproduct::
+
+
+Have Backbone; Disagree and Commit
+
+Imp. points 
+conflict for ceratin ideas,
+then provide possible approaches and try to convience
+if that didn't work try to test as a pilot project and try to gather data then show that data points.
+Even if it fails I work with him as a best possible manner. Even if we fails we lean and move a head.
+
+------------------------------------------------------------------------------------------------------------------------------
+Invent and Simplify
+
+
+Tell me about a time when you invented something.
+What improvements have you made at your current company? 
+Tell me about a time when you gave a simple solution to a complex problem.
+
+
+
+
+Eg:-
+digital_config_table ->
+    Situation: Delay in making any new feature live.
+    Task: Did a POC to check can we fit data in DB.
+    Action: After demostraction we agree and move a head with that approach.
+    Result: Just DB. insert queries away to on-board new operator.
+    Metric:: 2 weeks to 2-3 days
+
+
+
+Result analysis project:
+    Roll number field: -> send to server
+    Captcha image:
+    Captcha field: -> send to server
+    hashvalue:  -> send to server
+    On submit call
+
+Scale issue:
+MongoDB:
+    Mongo aggregation query Result:
+
+    {
+        "break_by1" : [
+            {
+                "responseId" : {
+                    "answerId" : "rowId"
+                }
+            },
+            {
+                "responseId" : {
+                    "answerId" : "rowId"
+                }
+            }
+        ],
+        "break_by2" : [
+            {
+
+            },
+            {
+
+            }
+        ]
+    }
+    --> 
+    [
+        {
+            "break_by_index" : "break_by1",
+            "responseId" : ""
+            "answerId" : "rowId"
+        }
+    ]
+
+
+Invent:
+    Code editor language parser
+------------------------------------------------------------------------------------------------------------------------------
+Ownership:
+
+1. Provide an example of when you personally demonstrated ownership.
+2. Tell me about a time you went above and beyond.
+3. Tell me about a time when you took on something significant outside your area of responsibility. Why was it important? What was the outcome?
+4. Describe a project or idea (not necessarily your own) that was implemented primarily because of your efforts. What was your role? What was the outcome?
+5. Give an example of when you saw a peer struggling and decided to step in and help. What was the situation and what actions did you take? What was the outcome?
+
+
+Eg:-
+    To code in others repository and get it reviewed & tested with theie team. Saves time.
+    Situation: We have to on-board "tata power-mumbai" operator. But gateway team API was not supporting their support.
+    Task: Tried to explore their code base and evalte changes and figur out that our team member also worked on the same module past.
+    Action: I have taken charge, done code in that repo. 
+    Result: Live in a 2 weeks.
+
+    
+    Help colleague:
+    Ticketing:
+    multiple queries on DB which can be done using mongoDB aggregation frame work.
+    
+
+    Result analysis project:
+
+    
+
+
+    //Sells & marketting team. Interested to send some template specific messanges
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------
+Examples:    
+
+Airtel data loader cron ->
+    Situation: On 2nd of every month our cron process 20 batches each having 5,20,000 records approx. from parquet files. 
+                And earlier data set size is less which process whole records 
+
+Horizontal splitting services within operators
+
+Rolling window approach for bill fetch 
+
+To code in others repository and get it reviewed & tested with there team. Saves time.
+
+String matching algo that work in O(n) complexity.
+
+Make single EMI consumer intead of multiple one.
+
+Datasource sync. feature 
+
+Tap new users from customer mobile numbers 
+
+
+Visa survey data ingestion from xlsx files.
+    python script to insert data
