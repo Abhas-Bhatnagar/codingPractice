@@ -22,7 +22,7 @@ class MinHeap{
     insertNode(node){ // overflow
         this.arr.push(node);
         let current_index = this.arr.length -1;
-        while(this.arr[current_index] < this.arr[this.parent(current_index)]){
+        while(current_index > 0 && this.arr[current_index] < this.arr[this.parent(current_index)]){
             this.swap(current_index, this.parent(current_index));
             current_index = this.parent(current_index);
         }
